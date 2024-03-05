@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using REST_API.DataLayer;
+using REST_API.Managers;
 using REST_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +16,8 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
+builder.Services.AddScoped<IArticleService, ArticleService>();
+builder.Services.AddScoped<IArticleManager, ArticleManager>();
 // builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 // builder.Services.AddSingleton<IArticleRepository, ArticleRepository>();
 
