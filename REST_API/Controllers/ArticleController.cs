@@ -23,60 +23,44 @@ namespace REST_API.Controllers
             return Ok(await _articleManager.GetAllArticles());
         }
 
-       
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<Article>> GetArticle(int id)
-        //{
-        //    var article = await _repository.GetArticleById(id);
-        //    if (article == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(article);
-        //}
 
-         
-        //[HttpPost]
-        //public async Task<ActionResult<List<Article>>> CreateArticle(Article article)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //   await _repository.CreateArticle(article);
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Article>> GetArticle(int id)
+        {
+             
+            return Ok(await _articleManager.GetArticleById(id));
+        }
 
-        //    return Ok(await _repository.GetAllArticles());
-        //}
 
-        
-        //[HttpPut("{id}")]
-        //public async Task<ActionResult> UpdateArticle(int id, Article article)
-        //{
-        //    if (id != article.ArticleId)
-        //    {
-        //        return BadRequest();
-        //    }
+        [HttpPost]
+        public async Task<ActionResult<Article>> CreateArticle(Article article)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return Ok(await _articleManager.CreateArticle(article));
+        }
 
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //    var update= await _repository.UpdateArticle(id, article);
-        //    if ( update == null)
-        //    {
-        //        return NotFound();
-        //    }
-    
-        //    return Ok(update);
-        //}
 
-       
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteArticle(int id)
-        //{
-        //    await _repository.DeleteArticle(id);
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateArticle(int id, Article article)
+        {
+             
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return Ok(await _articleManager.UpdateArticle(id, article));
+        }
 
-        //    return NoContent();
-        //}
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteArticle(int id)
+        {
+            await _articleManager.DeleteArticle(id);
+
+            return NoContent();
+        }
     }
 }
