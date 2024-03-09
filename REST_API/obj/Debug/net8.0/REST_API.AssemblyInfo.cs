@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("REST_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f23d53ffbd228c62ff0dedb32bd2f0091dd64146")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+807ee56b50c532bbb0fc3c9133d7033c5dc8f4d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("REST_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("REST_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
