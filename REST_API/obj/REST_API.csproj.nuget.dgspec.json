@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\C# COURSE\\code\\REST_API\\REST_API.csproj": {}
+    "F:\\Internship\\AllTask\\REST_API\\REST_API.csproj": {}
   },
   "projects": {
-    "F:\\C# COURSE\\code\\REST_API\\REST_API.csproj": {
+    "F:\\Internship\\AllTask\\REST_API\\REST_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\C# COURSE\\code\\REST_API\\REST_API.csproj",
+        "projectUniqueName": "F:\\Internship\\AllTask\\REST_API\\REST_API.csproj",
         "projectName": "REST_API",
-        "projectPath": "F:\\C# COURSE\\code\\REST_API\\REST_API.csproj",
+        "projectPath": "F:\\Internship\\AllTask\\REST_API\\REST_API.csproj",
         "packagesPath": "C:\\Users\\Jannatul Ferdaous\\.nuget\\packages\\",
-        "outputPath": "F:\\C# COURSE\\code\\REST_API\\obj\\",
+        "outputPath": "F:\\Internship\\AllTask\\REST_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "F:\\VS\\tools\\NuGetPackages"
@@ -70,6 +70,10 @@
             "Microsoft.SqlServer.Server": {
               "target": "Package",
               "version": "[1.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

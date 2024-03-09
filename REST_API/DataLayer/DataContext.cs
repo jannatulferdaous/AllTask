@@ -10,5 +10,7 @@ namespace REST_API.DataLayer
         
         }
         public DbSet <Article> Articles { get; set; }
+        public DbSet<Question>Questions { get; set; }
+        public DbSet<QAnswer> Answers { get; set; }
     }
 }
