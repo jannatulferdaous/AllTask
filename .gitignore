@@ -349,3 +349,17 @@ ASALocalRun/
 
 # IEG runtime
 **/*.runtime/*
+/REST_API/.vs/REST_API/FileContentIndex/12dfd202-07c6-4162-99ce-6dfe8ff78c66.vsidx
+/REST_API/.vs/REST_API/FileContentIndex/69d09b5e-05cd-4c52-9fa5-a831c3baf095.vsidx
+/REST_API/.vs/REST_API/FileContentIndex/7affb227-fc75-411f-a181-b5a84b5c07da.vsidx
+/REST_API/.vs/REST_API/FileContentIndex/8b7e0479-3439-408a-b9d0-b9d6b0720914.vsidx
+/REST_API/.vs/REST_API/FileContentIndex/c28492b1-a0b4-45cd-b5a9-d729cb15bf01.vsidx
+/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfo.cs
+/REST_API/obj/Debug/net8.0/REST_API.AssemblyInfoInputs.cache
+/REST_API/obj/Debug/net8.0/REST_API.assets.cache
+/REST_API/obj/Debug/net8.0/REST_API.csproj.AssemblyReference.cache
+/REST_API/obj/Debug/net8.0/REST_API.GeneratedMSBuildEditorConfig.editorconfig
+/REST_API/obj/project.assets.json
+/REST_API/obj/project.nuget.cache
+/REST_API/obj/REST_API.csproj.nuget.dgspec.json
+/REST_API/obj/REST_API.csproj.nuget.g.props
