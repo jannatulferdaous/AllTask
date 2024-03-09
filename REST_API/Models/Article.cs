@@ -11,6 +11,6 @@ namespace REST_API.Models
         [AllowHtml]
         [DataType(DataType.Text)]
         public string? ArticleText { get; set; }
-        public virtual ICollection<Question> Questions { get; set; }  
+        public virtual Question? Questions { get; set; }  
     }
 }

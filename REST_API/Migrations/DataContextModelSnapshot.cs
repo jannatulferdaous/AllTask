@@ -62,7 +62,8 @@ namespace REST_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("QuestionId");
+                    b.HasIndex("QuestionId")
+                        .IsUnique();
 
                     b.ToTable("Answers");
                 });
@@ -88,7 +89,8 @@ namespace REST_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticleId");
+                    b.HasIndex("ArticleId")
+                        .IsUnique();
 
                     b.ToTable("Questions");
                 });
@@ -96,8 +98,8 @@ namespace REST_API.Migrations
             modelBuilder.Entity("REST_API.Models.QAnswer", b =>
                 {
                     b.HasOne("REST_API.Models.Question", "Question")
-                        .WithMany("Answers")
-                        .HasForeignKey("QuestionId")
+                        .WithOne("Answers")
+                        .HasForeignKey("REST_API.Models.QAnswer", "QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -107,8 +109,8 @@ namespace REST_API.Migrations
             modelBuilder.Entity("REST_API.Models.Question", b =>
                 {
                     b.HasOne("REST_API.Models.Article", "Article")
-                        .WithMany("Questions")
-                        .HasForeignKey("ArticleId")
+                        .WithOne("Questions")
+                        .HasForeignKey("REST_API.Models.Question", "ArticleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -117,12 +119,14 @@ namespace REST_API.Migrations
 
             modelBuilder.Entity("REST_API.Models.Article", b =>
                 {
-                    b.Navigation("Questions");
+                    b.Navigation("Questions")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("REST_API.Models.Question", b =>
                 {
-                    b.Navigation("Answers");
+                    b.Navigation("Answers")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
