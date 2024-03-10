@@ -47,7 +47,7 @@ namespace REST_API.Services
                     Data = [],
                     TotalCount = 0,
                     IsSuccess = questions is null ? false : true,
-                    Message = "No Articles Found"
+                    Message = "No Questions Found"
                 };
             }
 
