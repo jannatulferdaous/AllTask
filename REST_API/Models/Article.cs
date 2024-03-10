@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.Extensions.Hosting;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace REST_API.Models
@@ -11,6 +12,7 @@ namespace REST_API.Models
         [AllowHtml]
         [DataType(DataType.Text)]
         public string? ArticleText { get; set; }
-        public virtual Question? Questions { get; set; }  
+        public  ICollection<Question> questions { get; } = new List<Question>();
+        public virtual QuestionAnswerMap? QuestionAnswerMap { get; set; }
     }
 }

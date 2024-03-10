@@ -40,7 +40,7 @@ namespace REST_API.Migrations
 
                     b.HasKey("ArticleId");
 
-                    b.ToTable("Articles");
+                    b.ToTable("Articles", (string)null);
                 });
 
             modelBuilder.Entity("REST_API.Models.QAnswer", b =>
@@ -65,7 +65,7 @@ namespace REST_API.Migrations
                     b.HasIndex("QuestionId")
                         .IsUnique();
 
-                    b.ToTable("Answers");
+                    b.ToTable("Answers", (string)null);
                 });
 
             modelBuilder.Entity("REST_API.Models.Question", b =>
@@ -92,7 +92,7 @@ namespace REST_API.Migrations
                     b.HasIndex("ArticleId")
                         .IsUnique();
 
-                    b.ToTable("Questions");
+                    b.ToTable("Questions", (string)null);
                 });
 
             modelBuilder.Entity("REST_API.Models.QAnswer", b =>
