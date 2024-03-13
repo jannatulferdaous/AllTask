@@ -6,6 +6,7 @@ namespace REST_API.Models
 {
     public class Article
     {
+        [Key]
         public int ArticleId { get; set; }
         public string? Title { get; set; }
         public string? Language { get; set; }
@@ -14,5 +15,6 @@ namespace REST_API.Models
         public string? ArticleText { get; set; }
         public  ICollection<Question> questions { get; } = new List<Question>();
         public virtual QuestionAnswerMap? QuestionAnswerMap { get; set; }
+
     }
 }
