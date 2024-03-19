@@ -1,0 +1,20 @@
+﻿@model QuizGame.Models.QuestionView
+<hr />
+@Html.HiddenFor(model=>model.ArticleId)
+@Html.HiddenFor(model=>model.QuestionId)
+<div>
+    <b>
+      @Model.Question
+    </b>
+</div>          
+@Html.HiddenFor(model => model.Answers)
+<hr/>
+@foreach(var answer in Model.Answers)
+{
+    <label>
+        @Html.RadioButtonFor(m => m.SelectedAnswerId, answer.AnswerId)
+        @answer.Answer
+    </label>
+
+    <br/>
+}

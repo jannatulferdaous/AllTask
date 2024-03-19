@@ -1,0 +1,18 @@
+﻿ 
+@using (Html.BeginForm("Index","QuestionView",FormMethod.Post))
+{
+    <div class="row">
+        <h4> Quiz</h4>
+        <hr/>
+          
+        @for (int i=0; i<Model.Count;i++)
+        {
+            @Html.EditorFor(model=>model[i],"QuestionView")
+            <hr/>
+        }
+        <input type="submit" value="Save" name="save" class="btn btn-primary" id="btnSave" />
+
+    </div>
+}
+
+
