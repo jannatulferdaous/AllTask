@@ -2,35 +2,47 @@ using Microsoft.AspNetCore.Mvc;
 using QuizGame.Models;
 using System.Diagnostics;
 using REST_API;
+using REST_API.Models;
+using static System.Net.WebRequestMethods;
+using Newtonsoft.Json;
+using REST_API.Response;
+using System.Linq;
 
 namespace QuizGame.Controllers
 {
     public class ArticleController : Controller
     {
         private readonly ILogger<ArticleController> _logger;
-        private readonly HttpClient _httpClient;
-        private readonly string _apiBaseUrl;
+        string BaseUrl= "https://localhost:44301/" ;
 
-        public ArticleController(ILogger<ArticleController> logger, HttpClient httpClient, IConfiguration configuration)
+        public ArticleController(ILogger<ArticleController> logger)
         {
             _logger = logger;
-            _httpClient = httpClient;
-            _apiBaseUrl = configuration["ApiBaseUrl"];
+             
         }
+        public async Task<IActionResult> GetAllArticle()
 
-        public async Task<IActionResult> Index(int id = 1)
         {
-            var response = await _httpClient.GetAsync($"{_apiBaseUrl}/api/Article/{id}");
+            IEnumerable<Article> articles = null;
+            using (HttpClient client = new HttpClient()) 
+            { 
+                client.BaseAddress = new Uri(BaseUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response= await client.GetAsync("api/Article");
+                if (response.IsSuccessStatusCode)
+                {
+                    var result= await response.Content.ReadAsStringAsync();
+                    var article = JsonConvert.DeserializeObject <PagedResponse<Article>>(result);
 
-            if (response.IsSuccessStatusCode)
-            {
-                var tutorial = await response.Content.ReadAsAsync<QuizGame.Models.Article>();  
-                return View(tutorial);
+                    var article2 = article.Data;  
+                    articles = article2;
+                }
             }
-
-            return NotFound();
+            return View(articles);
         }
-
+         
+         
         //public IActionResult Privacy()
         //{
         //    return View();

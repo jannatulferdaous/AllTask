@@ -1,0 +1,14 @@
+﻿@using REST_API.Models
+@model IEnumerable<Article>   
+
+<h1>List of Articles</h1>
+
+<ul>
+    @foreach (var article in Model)
+    {
+        <li>
+            <h3>@article.Title</h3>
+            <p>@article.ArticleText</p>
+        </li>
+    }
+</ul>
