@@ -41,8 +41,45 @@ namespace QuizGame.Controllers
             }
             return View(articles);
         }
-         
-         
+        [HttpGet]
+        public IActionResult Create()
+        {
+            Article article = new Article();
+            return View(article);
+        }
+        [HttpPost]
+        public async Task <IActionResult> Create(Article article)
+
+        {
+          
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(BaseUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.PostAsJsonAsync<Article>("api/Article/CreateArticle", article);
+                if (response.IsSuccessStatusCode)
+                {
+                    ViewBag.Message = "Article created successfully!";
+                    return RedirectToAction(nameof(GetAllArticle));
+                }
+                else
+                {
+                    // Handle non-successful response (log or display error)
+                    Console.WriteLine($"API call failed with status code: {response.StatusCode}");
+                    return View(article);
+                }
+            }
+            return View(article);
+            
+
+        }
+
+
+
+
+        
+                
         //public IActionResult Privacy()
         //{
         //    return View();

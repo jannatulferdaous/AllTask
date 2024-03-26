@@ -3,25 +3,37 @@
   "WorkspaceRootPath": "F:\\Internship\\AllTask\\REST_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\controllers\\articlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\views\\articleview\\getarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\controllers\\articleviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\views\\article\\getallarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|f:\\internship\\alltask\\rest_api\\services\\articleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|solutionrelative:services\\articleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|f:\\internship\\alltask\\rest_api\\controllers\\articlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|solutionrelative:controllers\\articlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|f:\\internship\\alltask\\rest_api\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|solutionrelative:models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|f:\\internship\\alltask\\rest_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|f:\\internship\\alltask\\rest_api\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|solutionrelative:models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\controllers\\articlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\views\\article\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,8 +43,112 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "..\\QuizGame\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "..\\QuizGame\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAD8AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-26T11:10:39.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetArticle.cshtml",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Views\\ArticleView\\GetArticle.cshtml",
+              "RelativeDocumentMoniker": "..\\QuizGame\\Views\\ArticleView\\GetArticle.cshtml",
+              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Views\\ArticleView\\GetArticle.cshtml",
+              "RelativeToolTip": "..\\QuizGame\\Views\\ArticleView\\GetArticle.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-26T11:07:33.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ArticleViewController.cs",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\ArticleViewController.cs",
+              "RelativeDocumentMoniker": "..\\QuizGame\\Controllers\\ArticleViewController.cs",
+              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\ArticleViewController.cs",
+              "RelativeToolTip": "..\\QuizGame\\Controllers\\ArticleViewController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBIAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T10:37:55.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ArticleController.cs",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\REST_API\\Controllers\\ArticleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ArticleController.cs",
+              "ToolTip": "F:\\Internship\\AllTask\\REST_API\\Controllers\\ArticleController.cs",
+              "RelativeToolTip": "Controllers\\ArticleController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T05:45:12.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetAllArticle.cshtml",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",
+              "RelativeDocumentMoniker": "..\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",
+              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",
+              "RelativeToolTip": "..\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-23T18:06:33.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ArticleController.cs",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\ArticleController.cs",
+              "RelativeDocumentMoniker": "..\\QuizGame\\Controllers\\ArticleController.cs",
+              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\ArticleController.cs",
+              "RelativeToolTip": "..\\QuizGame\\Controllers\\ArticleController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T16:30:02.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Article.cs",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\REST_API\\Models\\Article.cs",
+              "RelativeDocumentMoniker": "Models\\Article.cs",
+              "ToolTip": "F:\\Internship\\AllTask\\REST_API\\Models\\Article.cs",
+              "RelativeToolTip": "Models\\Article.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T07:43:12.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\REST_API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "F:\\Internship\\AllTask\\REST_API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAASwC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T09:35:20.103Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -41,73 +157,22 @@
               "RelativeDocumentMoniker": "..\\QuizGame\\Program.cs",
               "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Program.cs",
               "RelativeToolTip": "..\\QuizGame\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAA4AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-24T07:43:00.274Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ArticleService.cs",
-              "DocumentMoniker": "F:\\Internship\\AllTask\\REST_API\\Services\\ArticleService.cs",
-              "RelativeDocumentMoniker": "Services\\ArticleService.cs",
-              "ToolTip": "F:\\Internship\\AllTask\\REST_API\\Services\\ArticleService.cs",
-              "RelativeToolTip": "Services\\ArticleService.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAwwD0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T06:05:55.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\Internship\\AllTask\\REST_API\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "F:\\Internship\\AllTask\\REST_API\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T05:31:32.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetAllArticle.cshtml",
-              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",
-              "RelativeDocumentMoniker": "..\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",
-              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",
-              "RelativeToolTip": "..\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Views\\Article\\Create.cshtml",
+              "RelativeDocumentMoniker": "..\\QuizGame\\Views\\Article\\Create.cshtml",
+              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Views\\Article\\Create.cshtml",
+              "RelativeToolTip": "..\\QuizGame\\Views\\Article\\Create.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAMAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-23T18:06:33.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Result.cs",
-              "DocumentMoniker": "F:\\Internship\\AllTask\\REST_API\\Models\\Result.cs",
-              "RelativeDocumentMoniker": "Models\\Result.cs",
-              "ToolTip": "F:\\Internship\\AllTask\\REST_API\\Models\\Result.cs",
-              "RelativeToolTip": "Models\\Result.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T17:39:13.377Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ArticleController.cs",
-              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\ArticleController.cs",
-              "RelativeDocumentMoniker": "..\\QuizGame\\Controllers\\ArticleController.cs",
-              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\ArticleController.cs",
-              "RelativeToolTip": "..\\QuizGame\\Controllers\\ArticleController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACYAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T16:30:02.474Z",
+              "WhenOpened": "2024-03-25T16:52:04.425Z",
               "EditorCaption": ""
             }
           ]

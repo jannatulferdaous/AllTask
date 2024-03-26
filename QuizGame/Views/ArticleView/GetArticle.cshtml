@@ -1,0 +1,22 @@
+﻿@model REST_API.Models.Article
+
+@{
+    ViewData["Title"] = "Tutorial";
+}
+ 
+<div class="row">
+    <h4>Tutorial</h4>
+    <hr />
+    <div>
+        @Html.DisplayFor(model => model.Title)
+        <hr />
+        @Html.Raw(Model.ArticleText)
+    </div>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="QuestionShow" asp-route-id="@Model.ArticleId">Next</a>     
+</div>
+
+
+
+

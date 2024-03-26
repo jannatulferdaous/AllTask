@@ -25,6 +25,7 @@ namespace REST_API.Controllers
 
 
         [HttpGet("{id}")]
+         
         public async Task<ActionResult<Article>> GetArticle(int id)
         {
              
@@ -33,6 +34,7 @@ namespace REST_API.Controllers
 
 
         [HttpPost]
+        [Route("CreateArticle")]
         public async Task<ActionResult<Article>> CreateArticle(Article article)
         {
             if (!ModelState.IsValid)
