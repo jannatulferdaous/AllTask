@@ -16,7 +16,7 @@ namespace REST_API.Controllers
             _logger = logger;
 
         }
-        public async Task<IActionResult> GetArticle( int id=8)
+        public async Task<IActionResult> GetArticle( int id=1)
 
         {
              Article article1 = new Article();

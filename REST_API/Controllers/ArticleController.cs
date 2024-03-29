@@ -24,11 +24,9 @@ namespace REST_API.Controllers
         }
 
 
-        [HttpGet("{id}")]
-         
+        [HttpGet("{id}")]       
         public async Task<ActionResult<Article>> GetArticle(int id)
-        {
-             
+        {            
             return Ok(await _articleManager.GetArticleById(id));
         }
 

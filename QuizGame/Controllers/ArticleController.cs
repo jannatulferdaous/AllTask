@@ -47,6 +47,7 @@ namespace QuizGame.Controllers
             Article article = new Article();
             return View(article);
         }
+
         [HttpPost]
         public async Task <IActionResult> Create(Article article)
 
@@ -64,28 +65,66 @@ namespace QuizGame.Controllers
                     return RedirectToAction(nameof(GetAllArticle));
                 }
                 else
+                {           
+                    Console.WriteLine($"API call failed with status code: {response.StatusCode}");
+                    return View(article);
+                }
+            }  
+
+        }
+        [HttpGet]
+        public async Task<IActionResult>Update(int id)
+        { 
+            Article article2 = new Article();
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(BaseUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync("api/Article/" + id);
+                if (response.IsSuccessStatusCode)
                 {
-                    // Handle non-successful response (log or display error)
+                    var result = await response.Content.ReadAsStringAsync();
+                    var article = JsonConvert.DeserializeObject<Article>(result);
+                    article2 = article;
+
+                }
+            }
+            return View(article2);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update( int id,Article article)
+
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(BaseUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.PutAsJsonAsync<Article>("api/Article/"+id, article);
+                if (response.IsSuccessStatusCode)
+                {
+                    ViewBag.Message = "Article Updated successfully!";
+                    return RedirectToAction(nameof(GetAllArticle));
+                }
+                else
+                {
                     Console.WriteLine($"API call failed with status code: {response.StatusCode}");
                     return View(article);
                 }
             }
-            return View(article);
-            
 
         }
 
 
 
+            //public IActionResult Privacy()
+            //{
+            //    return View();
+            //}
 
-        
-                
-        //public IActionResult Privacy()
-        //{
-        //    return View();
-        //}
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+            [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

@@ -1,14 +1,12 @@
 ﻿@model REST_API.Models.Article
-
 @{
     ViewData["Title"] = "Tutorial";
-}
- 
+} 
 <div class="row">
-    <h4>Tutorial</h4>
+    <h4>Wecome to C# Programming</h4>
     <hr />
     <div>
-        @Html.DisplayFor(model => model.Title)
+        <h5> C#- @Html.DisplayFor(model => model.Title) </h5>
         <hr />
         @Html.Raw(Model.ArticleText)
     </div>

@@ -7,7 +7,7 @@
 <h1>ArticleList</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New</a>  
 </p>
 <table class="table">
     <thead>
@@ -32,6 +32,12 @@
         {
             <tr>
                 <td>
+                    <a asp-action="Update" asp-route-id="@item.ArticleId">Edit</a> |
+                   @*  <a asp-action="Details" asp-route-id="@item.ArticleId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a> *@
+
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.ArticleId)
                 </td>
                 <td>
@@ -43,12 +49,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.ArticleText)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ArticleId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ArticleId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a>
-
-                </td>
+               
             </tr>
         }
     </tbody>
