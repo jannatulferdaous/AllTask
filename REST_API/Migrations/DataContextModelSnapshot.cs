@@ -78,9 +78,6 @@ namespace REST_API.Migrations
                     b.Property<int>("ArticleId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ArticleTitle")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("QuestionText")
                         .HasColumnType("nvarchar(max)");
 

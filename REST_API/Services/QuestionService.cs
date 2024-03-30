@@ -68,7 +68,7 @@ namespace REST_API.Services
             {
                 return null;
             }
-            existingQuestion.ArticleTitle = question.ArticleTitle;
+             
             existingQuestion.QuestionText = question.QuestionText;
             existingQuestion.ArticleId = question.ArticleId;
             _context.Questions.Update(existingQuestion);

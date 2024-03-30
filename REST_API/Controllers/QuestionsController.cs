@@ -38,6 +38,7 @@ namespace REST_API.Controllers
 
 
         [HttpPost]
+        [Route("CreateQuestion")]
         public async Task<ActionResult<Question>> CreateQuestion(Question question)
         {
             if (!ModelState.IsValid)
