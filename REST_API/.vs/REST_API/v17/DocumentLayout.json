@@ -3,13 +3,25 @@
   "WorkspaceRootPath": "F:\\Internship\\AllTask\\REST_API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\controllers\\answercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\views\\answer\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\views\\question\\getallquestions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|f:\\internship\\alltask\\rest_api\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|solutionrelative:models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\views\\question\\getquestion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|f:\\internship\\alltask\\rest_api\\models\\qanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|solutionrelative:models\\qanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|f:\\internship\\alltask\\rest_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B24D2788-6299-4262-A5D3-DB8265815302}|REST_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7BCE71E6-F5A1-4C3E-B91E-9F6EA01423D2}|..\\QuizGame\\QuizGame.csproj|f:\\internship\\alltask\\quizgame\\views\\article\\getallarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
@@ -22,48 +34,89 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetQuestion.cshtml",
-              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Views\\Question\\GetQuestion.cshtml",
-              "RelativeDocumentMoniker": "..\\QuizGame\\Views\\Question\\GetQuestion.cshtml",
-              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Views\\Question\\GetQuestion.cshtml",
-              "RelativeToolTip": "..\\QuizGame\\Views\\Question\\GetQuestion.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-30T09:25:13.934Z"
+              "DocumentIndex": 3,
+              "Title": "Question.cs",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\REST_API\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "Models\\Question.cs",
+              "ToolTip": "F:\\Internship\\AllTask\\REST_API\\Models\\Question.cs",
+              "RelativeToolTip": "Models\\Question.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T14:32:01.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QAnswer.cs",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\REST_API\\Models\\QAnswer.cs",
+              "RelativeDocumentMoniker": "Models\\QAnswer.cs",
+              "ToolTip": "F:\\Internship\\AllTask\\REST_API\\Models\\QAnswer.cs",
+              "RelativeToolTip": "Models\\QAnswer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T14:31:23.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\REST_API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "F:\\Internship\\AllTask\\REST_API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAASwC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T14:15:52.463Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GetAllQuestions.cshtml",
-              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Views\\Question\\GetAllQuestions.cshtml",
-              "RelativeDocumentMoniker": "..\\QuizGame\\Views\\Question\\GetAllQuestions.cshtml",
-              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Views\\Question\\GetAllQuestions.cshtml",
-              "RelativeToolTip": "..\\QuizGame\\Views\\Question\\GetAllQuestions.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAABYAAAA",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Views\\Answer\\Create.cshtml",
+              "RelativeDocumentMoniker": "..\\QuizGame\\Views\\Answer\\Create.cshtml",
+              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Views\\Answer\\Create.cshtml",
+              "RelativeToolTip": "..\\QuizGame\\Views\\Answer\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-29T20:18:51.937Z"
+              "WhenOpened": "2024-03-31T06:13:30.378Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AnswerController.cs",
+              "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\AnswerController.cs",
+              "RelativeDocumentMoniker": "..\\QuizGame\\Controllers\\AnswerController.cs",
+              "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\AnswerController.cs",
+              "RelativeToolTip": "..\\QuizGame\\Controllers\\AnswerController.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAADgv2IAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T04:50:32.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "QuestionController.cs",
               "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\QuestionController.cs",
               "RelativeDocumentMoniker": "..\\QuizGame\\Controllers\\QuestionController.cs",
               "ToolTip": "F:\\Internship\\AllTask\\QuizGame\\Controllers\\QuestionController.cs",
               "RelativeToolTip": "..\\QuizGame\\Controllers\\QuestionController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAowAoAAAA0AAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAwIgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-29T17:42:57.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "GetAllArticle.cshtml",
               "DocumentMoniker": "F:\\Internship\\AllTask\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",
               "RelativeDocumentMoniker": "..\\QuizGame\\Views\\Article\\GetAllArticle.cshtml",

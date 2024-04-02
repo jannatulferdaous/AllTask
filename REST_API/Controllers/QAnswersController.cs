@@ -54,6 +54,7 @@ namespace REST_API.Controllers
 
          
         [HttpPost]
+        [Route("CreateAnswer")]
         public async Task<ActionResult<QAnswer>> CreateAnswer(QAnswer qAnswer)
         {
             if (!ModelState.IsValid)

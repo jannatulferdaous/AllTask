@@ -1,0 +1,17 @@
+﻿@model REST_API.Models.Question
+@{
+    ViewData["Title"] = "QUESTION";
+}
+<div class="row">
+    <h4> C# Programming Skill Test</h4>
+    <hr />
+    <div>
+        <h5> C#- @Html.DisplayFor(model => model.Id) </h5>
+        <hr />
+        @Html.Raw(Model.QuestionText)
+    </div>
+</div>
+@* <div>
+    <a asp-action="Index" asp-controller="QuestionShow" asp-route-id="@Model.ArticleId">Next</a>
+</div>
+ *@

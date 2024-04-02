@@ -1,0 +1,57 @@
+﻿@using REST_API.Models
+@model IEnumerable<QAnswer>
+@{
+    ViewData["Title"] = "Answers";
+}
+
+<h1>AnswersList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCorrect)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionId)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.Id">Edit</a> |
+                  <a asp-action="GetAnswer" asp-route-id="@item.Id">Details</a>
+                @* <a asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a>   *@
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Answer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsCorrect)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuestionId)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
