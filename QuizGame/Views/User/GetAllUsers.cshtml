@@ -1,0 +1,54 @@
+﻿@using REST_API.Models
+@model IEnumerable<User>   
+@{
+    ViewData["Title"] = "user";
+}
+
+<h1> UserList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>  
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Update
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>         
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.Id">Edit</a> |
+                   @*  <a asp-action="Details" asp-route-id="@item.ArticleId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a> *@
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                
+               
+            </tr>
+        }
+    </tbody>
+</table>

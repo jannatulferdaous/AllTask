@@ -14,5 +14,7 @@ namespace REST_API.Models
         public virtual Article? Article { get; set; }
         public ICollection<QAnswer>? Answers { get; set;}
         public virtual QuestionAnswerMap? QuestionAnswerMap { get; set; }
+
+         
     }
 }

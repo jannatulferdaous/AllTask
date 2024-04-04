@@ -69,7 +69,6 @@ namespace REST_API.Services
             if (existingAnswer is null)
             {
                 return null;
-
             }
             existingAnswer.Answer = answer.Answer;
             existingAnswer.IsCorrect = answer.IsCorrect;
