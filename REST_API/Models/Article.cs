@@ -13,7 +13,7 @@ namespace REST_API.Models
         [AllowHtml]
         [DataType(DataType.Text)]
         public string? ArticleText { get; set; }
-        public  ICollection<Question> questions { get; } = new List<Question>();
+        public  ICollection<Question> questions { get; set; }
         public virtual QuestionAnswerMap? QuestionAnswerMap { get; set; }
 
     }

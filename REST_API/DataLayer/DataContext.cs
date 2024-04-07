@@ -18,8 +18,7 @@ namespace REST_API.DataLayer
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<UserArticle>()
-                .HasNoKey();
+            
             modelBuilder.Entity<QuestionAnswerMap>(entity =>
             {
                 entity.HasKey(e=>e.Id);

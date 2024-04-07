@@ -17,6 +17,12 @@ namespace REST_API.Controllers
             _articleManager = articleManager;
         }
 
+        [HttpGet("Index{id}")]
+         
+        public async Task<ActionResult<Article>> Index(int id)
+        {
+            return Ok(await _articleManager.Index(id));
+        }
         [HttpGet]
         public async Task<ActionResult<List<Article>>> GetArticles()
         {

@@ -41,6 +41,17 @@ namespace REST_API.Controllers
             return Ok(await _userManager.CreateUser(user));
         }
 
+        [HttpPost]
+        [Route("ValidUser")]
+        public async Task<ActionResult<User>> ValidUser(Login login)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return Ok(await _userManager.ValidUser(login));
+        }
+
 
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateUser(int id, User user)

@@ -35,5 +35,10 @@ namespace REST_API.Managers
         {
              return await _service.UpdateUser(id, user);
         }
+
+        public async Task<User> ValidUser(Login login)
+        {
+            return await _service.ValidUser(login);
+        }
     }
 }

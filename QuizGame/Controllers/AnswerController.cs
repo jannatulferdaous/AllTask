@@ -111,7 +111,7 @@ namespace QuizGame.Controllers
                     var result = await response.Content.ReadAsStringAsync();
                     var question = JsonConvert.DeserializeObject<PagedResponse<Question>>(result);
                     var QSN = question.Data;
-                    ViewBag.Question = QSN;
+                    ViewBag.questions = QSN;
 
                 }
                 if (response2.IsSuccessStatusCode)

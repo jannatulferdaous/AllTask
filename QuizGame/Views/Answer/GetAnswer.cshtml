@@ -1,6 +1,6 @@
-﻿@model REST_API.Models.Question
+﻿@model REST_API.Models.QAnswer
 @{
-    ViewData["Title"] = "QUESTION";
+    ViewData["Title"] = "Answer";
 }
 <div class="row">
     <h4> C# Programming Skill Test</h4>
@@ -8,10 +8,7 @@
     <div>
         <h5> C#- @Html.DisplayFor(model => model.Id) </h5>
         <hr />
-        @Html.Raw(Model.QuestionText)
+        @Html.Raw(Model.Answer)
     </div>
 </div>
-@* <div>
-    <a asp-action="Index" asp-controller="QuestionShow" asp-route-id="@Model.ArticleId">Next</a>
-</div>
- *@
+ 

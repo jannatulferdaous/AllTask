@@ -10,5 +10,6 @@ namespace REST_API.Services
         Task<User> UpdateUser(int id, User user);
         Task<User> CreateUser(User user);
         Task DeleteUser(int id);
+        Task<User> ValidUser(Login login);
     }
 }

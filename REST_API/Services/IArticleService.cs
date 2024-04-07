@@ -10,5 +10,6 @@ namespace REST_API.Services
         Task<Article> UpdateArticle(int id, Article article);
         Task<Article> CreateArticle(Article article);
         Task DeleteArticle(int id);
+        Task<Article> Index(int id);
     }
 }

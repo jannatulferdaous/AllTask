@@ -15,9 +15,13 @@ namespace REST_API.Services
 
         public async Task<User> CreateUser(User user)
         {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            if (user is not null)
+            {
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();              
+            }
             return user;
+
         }
 
         public async Task DeleteUser(int id)
@@ -76,6 +80,17 @@ namespace REST_API.Services
             existingUser.Password = user.Password;
             await _context.SaveChangesAsync();
             return existingUser;
+        }
+
+        public async Task<User> ValidUser(Login login)
+        {
+           var user = await _context.Users.FirstOrDefaultAsync(u => u.Name == login.Name && u.Password==login.Password);
+          if (user is null)
+            {
+             return null;
+            }
+          return user;
+             
         }
     }
 }

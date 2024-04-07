@@ -32,6 +32,11 @@ namespace REST_API.Managers
             return await _articleService.GetArticleById(id);
         }
 
+        public async Task<Article> Index(int id)
+        {
+            return await _articleService.Index(id);
+        }
+
         public async Task<Article> UpdateArticle(int id, Article article)
         {
             return await _articleService.UpdateArticle(id,article);

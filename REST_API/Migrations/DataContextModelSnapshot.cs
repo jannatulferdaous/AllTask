@@ -148,11 +148,19 @@ namespace REST_API.Migrations
 
             modelBuilder.Entity("REST_API.Models.UserArticle", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<int>("ArticleId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("ArticleId");
 
