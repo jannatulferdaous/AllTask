@@ -53,9 +53,6 @@ namespace QuizGame.Controllers
         }
 
 
-
-
-
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -75,14 +72,18 @@ namespace QuizGame.Controllers
                     
                 }
             }
-            Question question = new Question();
-            return View(question);
+            QuestionView questionView = new QuestionView();
+            return View(questionView);
 
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Question question)
+        public async Task<IActionResult> Create(QuestionView questionView)
         {
+            QAnswer answer = new QAnswer();
+            Question question = new Question();
+            question.ArticleId = questionView.ArticleId;
+            question.QuestionText = questionView.Question;
             using (HttpClient client = new HttpClient())
             {
                 client.BaseAddress = new Uri(BaseUrl);
@@ -91,13 +92,30 @@ namespace QuizGame.Controllers
                 HttpResponseMessage response = await client.PostAsJsonAsync<Question>("api/Questions/CreateQuestion", question);
                 if (response.IsSuccessStatusCode)
                 {
-                    ViewBag.Message = "Question created successfully!";
+                    var result = await response.Content.ReadAsStringAsync();
+                    var newQuestion = JsonConvert.DeserializeObject<Question>(result);
+                    string[] Option = new string[] {questionView.Option1, questionView.Option2, questionView.Option3, questionView.Option4};
+                    var IsCorrect = new bool[] { questionView.IsCorrect1, questionView.IsCorrect2, questionView.IsCorrect3, questionView.IsCorrect4 };
+                    for (int i = 0; i < 4; i++)
+                    {
+                        answer.QuestionId = newQuestion.Id;
+                        answer.Answer = Option[i];
+                        answer.IsCorrect = IsCorrect[i];
+                        client.DefaultRequestHeaders.Clear();
+                        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                        HttpResponseMessage response2 = await client.PostAsJsonAsync<QAnswer>("api/QAnswer/CreateAnswer", answer);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            ViewBag.Message = "Question created successfully!";
+                            
+                        }
+                    }
                     return RedirectToAction(nameof(GetAllQuestions));
                 }
                 else
                 {
                     Console.WriteLine($"API call failed with status code: {response.StatusCode}");
-                    return View(question);
+                    return View(questionView);
                 }
             }
 

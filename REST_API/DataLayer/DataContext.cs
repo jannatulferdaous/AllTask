@@ -6,7 +6,11 @@ namespace REST_API.DataLayer
 {
     public class DataContext:DbContext
     {
-       public DataContext(DbContextOptions<DataContext> options) : base(options){}
+        public DataContext()
+        {
+        }
+
+        public DataContext(DbContextOptions<DataContext> options) : base(options){}
         public DbSet <Article> Articles { get; set; }
         public DbSet<Question>Questions { get; set; }
         public DbSet<QAnswer> Answers { get; set; }

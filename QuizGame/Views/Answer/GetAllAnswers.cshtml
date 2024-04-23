@@ -3,55 +3,52 @@
 @{
     ViewData["Title"] = "Answers";
 }
-
-<h1>AnswersList</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th> </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Answer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsCorrect)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QuestionId)
-            </th>
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <a asp-action="Update" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="GetAnswer" asp-route-id="@item.Id">Details</a>
-                    @* <a asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a>   *@
-
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Answer)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsCorrect)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.QuestionId)
-                </td>
-
+<div class="container justify-content-center mt-5 ">
+    <div class=" row align-content-center bg-opacity-11 bg-info mt-8 pt-3 mb-3 offset-md-1">
+        <h4 class="text-dark  text-center text-lg-center text-uppercase"> View ALL Answers</h4>
+    </div>
+    <p> <a asp-action="Create" class="btn btn-primary btn-md " role="button">Create New</a> </p>
+    <table class="table table-bordered  table-hover text-center table-striped d-xxl-table-cell">
+        <thead style="background-color:slateblue">
+            <tr class="mt-3 pt-3">
+                <th> </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Answer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsCorrect)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QuestionId)
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="GetQuestion" asp-route-id="@item.Id">Details</a>
+                        @* <a asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a> *@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Answer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsCorrect)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuestionId)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -40,10 +40,4 @@
 <div>
     <a asp-action="GetAllUsers">Back to List</a>
 </div>
-@*@Scripts.Render("~/bundles/jquery")*@
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    <script src="@Url.Content("~/lib/jquery/dist/jquery")"></script>
-}
+ 

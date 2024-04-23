@@ -43,7 +43,7 @@ namespace REST_API.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest(ModelState); 
             }
             return Ok(await _articleManager.CreateArticle(article));
         }

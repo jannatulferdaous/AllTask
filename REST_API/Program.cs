@@ -3,6 +3,7 @@ using REST_API.DataLayer;
 using REST_API.Managers;
 using REST_API.Services;
 using REST_API.Controllers;
+using System.Runtime.ConstrainedExecution;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,8 @@ builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
+builder.Services.AddScoped<IQsnViewService, QsnViewService>();
+builder.Services.AddScoped<IQuestionViewManager, QuestionViewManager>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserManager, UserManager>();
 builder.Services.AddScoped<IAnswerService, AnswerService>();

@@ -1,49 +1,92 @@
-﻿@model REST_API.Models.Question
+﻿@model REST_API.Models.QuestionView
 
 @{
     ViewData["Title"] = "Create";
 }
-<h1>Create</h1>
 
-<h4>Question</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+       .custom-dropdown {
+            width: 900px;
+            height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
 
-            <div class="form-group">
-                <label asp-for="ArticleId " class="control-label">Article</label>
-                <span asp-validation-for="ArticleId" class="text-danger"></span>
-                @Html.DropDownListFor(m => m.ArticleId, new SelectList(ViewBag.Article, "ArticleId", "Title"))
+        <div Class="row mt-5 ">
+            <div class="col-md-8 bg-opacity-50 bg-primary text-muted text-md-center offset-md-3 ">
+                <h3 class="p-2">Create Question </h3>
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.QuestionText)
-                <br />
-                @Html.TextAreaFor(m => m.QuestionText)
-                @Html.ValidationMessageFor(m => m.QuestionText, "", new { @class = "error" })
-                <br />
-                <span>@Html.Raw(Model.QuestionText)</span>
-                <script src="https://cdn.tiny.cloud/1/ry7f1ohvksa09p4spo7t5wlg1a1v2ctiolzwr6wgerv20zx7/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-                <script type="text/javascript">
-                    tinymce.init({ selector: 'textarea', width: 700 });
-                </script>
+        <div class="row pt-3 ">
+            <div class="col-md-7 col-lg-10 offset-3  bg-light shadow">
+                <form asp-action="Create" class="align-content-center p-3">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label class=" text-primary text-opacity-60 fs-4 fw-bolder" asp-for="ArticleId " class="form-label">Select Article</label>
+                        <span asp-validation-for="ArticleId" class="text-danger"></span>
+                        @Html.DropDownListFor(m => m.ArticleId, new SelectList(ViewBag.Article, "ArticleId", "Title"), new { @class = "custom-dropdown" })
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Question" class="col-form-label  text-primary text-opacity-55 fs-4 fw-bolder">Enter Question</label>
+                        <textarea  asp-for="Question" class="form-control align-content-center"> </textarea>
+                        <span asp-validation-for="Question" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-primary text-opacity-55 fs-5 fw-bolder" asp-for="Option1">Answer Option-1</label>
+                        <input type="text" class="form-control" id="option1" asp-for="Option1" />
+                        <span asp-validation-for="Option1" class="text-danger"></span>
+                        <label class="form-check-label fs-7 fw-bolder text-muted ">
+                            <input class="form-check-input " type="checkbox" asp-for="IsCorrect1" /> Is Correct?
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-primary text-opacity-55 fs-5 fw-bolder" asp-for="Option2">Answer Option-2</label>
+                        <input type="text" class="form-control" id="option1" asp-for="Option2" />
+                        <span asp-validation-for="Option2" class="text-danger"></span>
+                        <label class="form-check-label fs-7 fw-bolder text-muted ">
+                            <input class="form-check-input " type="checkbox" asp-for="IsCorrect2" /> Is Correct?
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-primary text-opacity-55 fs-5 fw-bolder" asp-for="Option3">Answer Option-3</label>
+                        <input type="text" class="form-control" id="option1" asp-for="Option3" />
+                        <span asp-validation-for="Option3" class="text-danger"></span>
+                        <label class="form-check-label fs-7 fw-bolder text-muted ">
+                            <input class="form-check-input " type="checkbox" asp-for="IsCorrect3" /> Is Correct?
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-primary text-opacity-55 fs-5 fw-bolder" asp-for="Option4">Answer Option-4</label>
+                        <input type="text" class="form-control" id="option4" asp-for="Option4" />
+                        <span asp-validation-for="Option4" class="text-danger"></span>
+                        <label class="form-check-label fs-7 fw-bolder text-muted ">
+                            <input class="form-check-input " type="checkbox" asp-for="IsCorrect4" /> Is Correct?
+                        </label>
+                    </div>
+                    <div class="form-group pt-3 align-content-lg-center align-content-md-end">
+                        <input type="submit" value="Create" class="btn btn-primary btn-md" />
+                    </div>
+                </form>
+                <div class="">
+                    <a asp-action="GetAllQuestion" class="btn btn-primary btn-lg  " role="button">Back to List</a>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</body>
+</html>
 
-<div>
-    <a asp-action="GetAllQuestion">Back to List</a>
-</div>
-@*@Scripts.Render("~/bundles/jquery")*@
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    <script src="@Url.Content("~/lib/jquery/dist/jquery")"></script>
-}

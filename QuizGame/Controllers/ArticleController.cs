@@ -13,11 +13,9 @@ namespace QuizGame.Controllers
     {
         private readonly ILogger<ArticleController> _logger;
         string BaseUrl= "https://localhost:44301/" ;
-
         public ArticleController(ILogger<ArticleController> logger)
         {
-            _logger = logger;
-             
+            _logger = logger;           
         }
         public async Task<IActionResult> GetAllArticle()
 

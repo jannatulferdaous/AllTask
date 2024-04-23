@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "UpdateUser";
 }
-
 <h1>Update</h1>
 
 <h4>User</h4>
@@ -39,10 +38,4 @@
 <div>
     <a asp-action="GetAllusers">Back to List</a>
 </div>
-@*@Scripts.Render("~/bundles/jquery")*@
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    <script src="@Url.Content("~/lib/jquery/dist/jquery")"></script>
-}
+ 
