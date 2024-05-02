@@ -22,9 +22,8 @@
                 </div>
                 <div class="form-group p-3">
                     <label asp-for="ArticleText" class="form-label fw-bolder"></label>
-                    <textarea asp-for ="ArticleText" class="form-control" /> </textarea>
-                    <span asp-validation-for="ArticleText" class="text-danger"></span>
-                     
+                    <textarea asp-for ="ArticleText" class="form-control"> </textarea>
+                    <span asp-validation-for="ArticleText" class="text-danger"></span>                    
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />
@@ -39,8 +38,7 @@
         }
     }
     <div>
-        <a asp-action="GetAllArticle" class="btn btn-primary btn-lg " role="button">Back to List</a>
-         
+        <a asp-action="GetAllArticle" class="btn btn-primary btn-lg " role="button">Back to List</a>         
     </div>
 </div>
   

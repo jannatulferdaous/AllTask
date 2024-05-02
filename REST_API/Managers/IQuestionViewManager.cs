@@ -5,5 +5,6 @@ namespace REST_API.Managers
     public interface IQuestionViewManager
     {
         Task<List<QuestionViewPage>> Index(int id);
+        Task  SaveAnswers( List<QuestionAnswerMap> questionViewPages);
     }
 }

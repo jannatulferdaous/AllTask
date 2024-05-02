@@ -4,6 +4,7 @@ namespace REST_API.Services
 {
     public interface IQsnViewService
     {
-        Task<List<QuestionViewPage>> Index(int id);
+        Task<List<QuestionViewPage>> Index(int id);       
+        Task SaveAnswers(List<QuestionAnswerMap> questionViewPages);
     }
 }

@@ -14,5 +14,12 @@ namespace REST_API.Managers
         {
             return await _service.Index(id);
         }
+       
+         
+
+        public async Task SaveAnswers(List<QuestionAnswerMap> questionViewPages)
+        {
+            await _service.SaveAnswers(questionViewPages);
+        }
     }
 }

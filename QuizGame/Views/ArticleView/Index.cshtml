@@ -2,23 +2,27 @@
 @{
     ViewData["Title"] = "Tutorial";
 }
-<div class="container">
+<div class="container p-3 mt-5">
     <div class="row">
         <div class="col-lg-12 col-sm-4 col-md-8 align-content-md-center align-content-sm-center mb-6">
-            <h4>Wecome to C# Programming</h4>
+            <div class="col-md-8 bg-opacity-50 bg-primary text-success text-opacity-100 text-uppercase text-md-center offset-md-2 ">
+                <h4 class="text-center text-light bg-opacity-75 bg-dark p-3">Wecome to Programming learning</h4>
+            </div>
+             
             <hr />
             <div>
-                <h5> C#-@Html.DisplayFor(model => model.Title) </h5>
+                <h5 class=" bg-opacity-50 bg-primary bg-dark  p-3 align-self-lg-center text-light text-uppercase fw-bolder ">@Html.DisplayFor(model => model.Title) </h5>
                 <hr />
                 @Html.Raw(Model.ArticleText)
             </div>
-            <div class="p-3 mb-3">
-                <a asp-action="Index" asp-controller="QuestionView" asp-route-id="@Model.ArticleId"> Knowledge Check</a>
+            <div class="p-3 mb-5 align-content-end">
+                <a asp-action="Index" asp-controller="MvcQuestionView" asp-route-id="@Model.ArticleId" class="btn btn-primary btn-lg align-content-lg-end" role="button">Knowledge Check</a>
             </div>
         </div>
-        
     </div>
 </div>
+
+
 
 
  

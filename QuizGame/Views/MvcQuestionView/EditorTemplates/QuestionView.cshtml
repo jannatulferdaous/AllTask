@@ -1,0 +1,20 @@
+﻿@model REST_API.Models.QuestionViewPage
+<hr />
+@Html.HiddenFor(model=>model.ArticleId)
+@Html.HiddenFor(model=>model.QuestionId)
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title"><span>@Html.Raw(Model.Question)</span></h5>
+        @foreach (var answer in Model.Answers)
+        {
+            <div class="form-check">
+                @Html.RadioButtonFor(m => m.SelectedAnswerId, answer.AnswerId, new { @class = "form-check-input" })
+                <label class="form-check-label" for="@answer.AnswerId">
+                    @answer.Answer
+                </label>
+            </div>
+        }
+    </div>
+</div>
+
+ 

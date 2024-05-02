@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using REST_API.DataLayer;
 using REST_API.Models;
 
@@ -38,13 +39,43 @@ namespace REST_API.Services
                             };
 
                 return await query.ToListAsync();
-
             }
             catch (Exception ex)
             {
-
                 return null;
             }
         }
+        public async Task SaveAnswers(List<QuestionAnswerMap> questionAnswerMap)
+        {
+            try
+            {
+                foreach (var item in questionAnswerMap)
+                {
+                    var existingQsn = await _context.QuestionAnswerMaps.FirstOrDefaultAsync(ob => ob.UserId == item.UserId && ob.QuestionId == item.QuestionId);
+                    if (existingQsn != null)
+                    {
+                        existingQsn.UserId = item.UserId;
+                        existingQsn.QuestionId = item.QuestionId;
+                        existingQsn.AnswerId = item.AnswerId;
+                        existingQsn.ArticleId = item.ArticleId;
+                    }
+                    else
+                    {
+                        _context.QuestionAnswerMaps.Add(item);
+                    }
+                }
+                await _context.SaveChangesAsync();
+                return ;
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+
+        
+
+        }
+
     }
 }

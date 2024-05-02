@@ -22,31 +22,7 @@ namespace REST_API.DataLayer
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            
-            modelBuilder.Entity<QuestionAnswerMap>(entity =>
-            {
-                entity.HasKey(e=>e.Id);
 
-                entity.HasOne(u=>u.user)
-                .WithOne(qa=>qa.QuestionAnswerMap)
-                .HasForeignKey<QuestionAnswerMap>(qa=>qa.UserId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-                entity.HasOne(q=>q.question)
-                .WithOne(qa=>qa.QuestionAnswerMap)
-                .HasForeignKey<QuestionAnswerMap>(q=>q.QuestionId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-                entity.HasOne(q => q.answer)
-                .WithOne(qa => qa.QuestionAnswerMap)
-                .HasForeignKey<QuestionAnswerMap>(q => q.AnswerId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-                entity.HasOne(q => q.article)
-                .WithOne(qa => qa.QuestionAnswerMap)
-                .HasForeignKey<QuestionAnswerMap>(q => q.ArticleId)
-                .OnDelete(DeleteBehavior.NoAction);
-            });
              
 
         }

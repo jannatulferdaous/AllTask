@@ -16,10 +16,19 @@ namespace REST_API.Controllers
             _questionViewManager = questionManager;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<QuestionViewPage>>> Index(int id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<List<QuestionViewPage>>>Index(int id)
         {
             return Ok(await _questionViewManager.Index(id));
+        }
+
+
+        [HttpPost]
+        [Route("Index")]
+        public async Task<ActionResult>Index(List<QuestionAnswerMap> questionViewPages)
+        {
+            await _questionViewManager.SaveAnswers(questionViewPages);
+            return Ok();
         }
     }
 }

@@ -17,6 +17,9 @@ builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped< IUserResultService,  UserResultService > ();
+builder.Services.AddScoped<IUserResultManager, UserResultManager>();
 builder.Services.AddScoped<IQsnViewService, QsnViewService>();
 builder.Services.AddScoped<IQuestionViewManager, QuestionViewManager>();
 builder.Services.AddScoped<IUserService, UserService>();

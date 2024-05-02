@@ -1,0 +1,32 @@
+﻿@using REST_API.Models
+@model List<QuestionViewPage>
+<div class="container p-3 mt-5">
+    <div class="col-md-8 bg-opacity-50 bg-primary text-success text-opacity-100 text-uppercase text-md-center offset-md-2 ">
+        <h4 class="text-center text-light bg-opacity-75 bg-dark box-shadow border-bottom border-primary p-3">Check Your Knowledge</h4>       
+    </div>
+    @using (Html.BeginForm("Index", "MvcQuestionView", FormMethod.Post))
+    {        
+        for (int i = 0; i < Model.Count; i++)
+        {
+            var question = Model[i];
+            <div class="card mb-3">
+                <div class="card-body">
+                    @Html.HiddenFor(m => Model[i].ArticleId)
+                    @Html.HiddenFor(m => Model[i].QuestionId)  
+                    <h5 class="card-title shadow"><span>@Html.Raw(question.Question)</span></h5>
+                    @for (int j = 0; j < question.Answers.Count; j++)
+                    {
+                        var answer = question.Answers[j];
+                        <div class="form-check mt-3 bg-light fw-bolder ">
+                            @Html.RadioButtonFor(m => Model[i].SelectedAnswerId, answer.AnswerId, new { id = "q" + i + "_a" + j, @class = "form-check-input" })
+                            <label class="form-check-label" for="q@i_a@j">
+                                @Html.Raw(answer.Answer)
+                            </label>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        <button type="submit" class="btn btn-primary bs-tooltip-start box-shadow btn-lg p-3 mb-3">Submit</button>
+    }
+</div>

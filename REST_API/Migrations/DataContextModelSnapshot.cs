@@ -110,18 +110,6 @@ namespace REST_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnswerId")
-                        .IsUnique();
-
-                    b.HasIndex("ArticleId")
-                        .IsUnique();
-
-                    b.HasIndex("QuestionId")
-                        .IsUnique();
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
                     b.ToTable("QuestionAnswerMaps");
                 });
 
@@ -189,41 +177,6 @@ namespace REST_API.Migrations
                     b.Navigation("Article");
                 });
 
-            modelBuilder.Entity("REST_API.Models.QuestionAnswerMap", b =>
-                {
-                    b.HasOne("REST_API.Models.QAnswer", "answer")
-                        .WithOne("QuestionAnswerMap")
-                        .HasForeignKey("REST_API.Models.QuestionAnswerMap", "AnswerId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("REST_API.Models.Article", "article")
-                        .WithOne("QuestionAnswerMap")
-                        .HasForeignKey("REST_API.Models.QuestionAnswerMap", "ArticleId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("REST_API.Models.Question", "question")
-                        .WithOne("QuestionAnswerMap")
-                        .HasForeignKey("REST_API.Models.QuestionAnswerMap", "QuestionId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("REST_API.Models.User", "user")
-                        .WithOne("QuestionAnswerMap")
-                        .HasForeignKey("REST_API.Models.QuestionAnswerMap", "UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("answer");
-
-                    b.Navigation("article");
-
-                    b.Navigation("question");
-
-                    b.Navigation("user");
-                });
-
             modelBuilder.Entity("REST_API.Models.UserArticle", b =>
                 {
                     b.HasOne("REST_API.Models.Article", "Article")
@@ -237,26 +190,12 @@ namespace REST_API.Migrations
 
             modelBuilder.Entity("REST_API.Models.Article", b =>
                 {
-                    b.Navigation("QuestionAnswerMap");
-
                     b.Navigation("questions");
-                });
-
-            modelBuilder.Entity("REST_API.Models.QAnswer", b =>
-                {
-                    b.Navigation("QuestionAnswerMap");
                 });
 
             modelBuilder.Entity("REST_API.Models.Question", b =>
                 {
                     b.Navigation("Answers");
-
-                    b.Navigation("QuestionAnswerMap");
-                });
-
-            modelBuilder.Entity("REST_API.Models.User", b =>
-                {
-                    b.Navigation("QuestionAnswerMap");
                 });
 #pragma warning restore 612, 618
         }
