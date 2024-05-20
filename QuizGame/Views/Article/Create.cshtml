@@ -2,44 +2,101 @@
 @{
     ViewData["Title"] = "Create";
 }
-<div class="container justify-content-center mt-5 ">
-    <div class=" row align-content-center bg-opacity-10 bg-info mt-8 pt-3 mb-3 offset-md-1">
-        <h4 class="text-dark  text-center text-lg-center text-uppercase"> Create Article</h4>
-    </div>
-    <div class=" row align-content-center bg-opacity-10 bg-success p-3 offset-md-3">
-        <div class="col-lg-9 justify-content-center box-shadow">
-            <form asp-controller="Article" class="align-content-lg-center " asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group form-floating p-3">
-                    <label asp-for="Language" class="form-label fw-bolder m-2"></label>
-                    <input asp-for="Language" class="form-control" />
-                    <span asp-validation-for="Language" class="text-danger"></span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Article</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-siO7MODOxbkyJt9YBmuUUcRwIqAELqYwypCBOQnnzLs38YnSlPdhpSkHD/bIjWolROJ vkAOP8RSqECqMyKFdWouQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js" integrity="sha512-X┼íNMVxizv5YswhkTUqNfkqJz/MxtYhx/s2lXtWGLcnvJy2JpQIbYn3D3qyCy5XF5s+4EVNFP4AxvKiC8v28dQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @* <script src="~/Shared/articleForm.js"></script> *@
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center bg-opacity-10 bg-info mt-5 pt-3 mb-3">
+            <div class="col-md-8">
+                <form id="articleForm" class="bg-primary bg-opacity-25 p-3" onsubmit="return submitHandler(this);" action="/Article/Create">
+                    <h3 class="text-dark text-center text-bg-primary p-3">Create Article</h3>
+                    <div class="form-group">
+                        <label for="language">Language</label>
+                        <input type="text" id="language" name="Language" class="form-control" placeholder="Enter Language" required>
+                        <span class="text-danger" id="language-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="Title" class="form-control" placeholder="Enter Title" required>
+                        <span class="text-danger" id="title-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="articleText">Article Text</label>
+                        <textarea id="articleText" name="ArticleText" class="form-control" rows="10" placeholder="Write your article here..." required></textarea>
+                        <span class="text-danger" id="articleText-error"></span>
+                    </div>
+                    <button type="button" id="submit-btn" class="btn btn-primary">Create</button>
+                </form>
+                <div class="align-content-center">
+                    <a asp-action="GetAllArticle" class="btn btn-primary btn-lg" role="button">Back to List</a>
                 </div>
-                <div class="form-group form-floating p-3">
-                    <label asp-for="Title" class="form-label fw-bolder m-2"></label>
-                    <input asp-for="Title" class="form-control" />
-                    <span asp-validation-for="Title" class="text-danger"></span>
-                </div>
-                <div class="form-group p-3">
-                    <label asp-for="ArticleText" class="form-label fw-bolder"></label>
-                    <textarea asp-for ="ArticleText" class="form-control"> </textarea>
-                    <span asp-validation-for="ArticleText" class="text-danger"></span>                    
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-    @{
-        if (ViewBag.Message != null)
-        {
-            <label> @ViewBag.Message</label>
-        }
-    }
-    <div>
-        <a asp-action="GetAllArticle" class="btn btn-primary btn-lg " role="button">Back to List</a>         
-    </div>
-</div>
-  
+     <script>
+        $(document).ready(function () {
+            $("#submit-btn").click(function () {
+                var language = $("#language").val();
+                var title = $("#title").val();
+                var articleText = $("#articleText").val();
+                var isValid = true;
+                var errorMessage = "";
+                if (language.length < 1) {
+                    isValid = false;
+                    $("#language-error").html("Language is required.");
+                } else {
+                    $("#language-error").html(""); // Clear error message if language is valid
+                }
+                if (title.length < 3) {
+                    isValid = false;
+                    $("#title-error").html("Title must be at least 3 characters long."); // Set specific error message
+                } else {
+                    $("#title-error").html("");
+                }
+                if (articleText.length < 20) {
+                    isValid = false;
+                    $("#articleText-error").html("Article text must be at least 20 characters long.");
+                } else {
+                    $("#articleText-error").html("");
+                }
+                tinyMCE.triggerSave();
+
+                if (!isValid) {
+                    return false;
+                }
+
+                $.ajax({
+                    url: '/Article/Create',
+                    type: 'POST',
+                    data: $("#articleForm").serialize(),
+                    success: function (response) {
+                        console.log('Article created successfully!');
+                        alert("Article created successfully!");
+                        window.location.href = "/Article/GetAllArticle";
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error creating article:', error);
+
+                    }
+                });
+                return false;
+            });
+        });
+     </script>
+</body>
+</html>
+
  
