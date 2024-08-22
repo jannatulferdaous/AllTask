@@ -1,0 +1,5 @@
+# To run this project you have to take QuizGame & RestAPI both File.
+# After that you have to setup multiple startup project in visual studio
+  then setup both project to startup 
+# Then run this project enter login information-> userName-shantona
+                                                  Password-habijabi123@
