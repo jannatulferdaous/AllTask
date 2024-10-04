@@ -23,11 +23,12 @@ To run the project locally, follow these steps:
    ```bash
    git clone [https://github.com/jannatulferdaous/AllTask.git] 
 2. **Open the project in Visual Studio:**
+   
 3. **Set Multiple Startup Projects:**
-- Right-click on the solution and select Properties.
-- Go to Common Properties > Startup Project.
-- Select multiple startup projects, and set both QuizGame and REST_API to start.
-- Click OK.
+  - Right-click on the solution and select Properties.
+  - Go to Common Properties > Startup Project.
+  - Select multiple startup projects, and set both QuizGame and REST_API to start.
+  - Click OK.
 4. **Use the following login credentials:**
  - Username: Jannatul Ferdaous 
  - Password: habijabi123@
